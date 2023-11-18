@@ -50,11 +50,20 @@
         #gallery img:hover {
             transform: scale(1.1);
         }
+
+        #hiddenSection {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.489);;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         </style>
    
 </head>
 <body>
-    
+  
 
     <header>
         <center>  <h1><b>The monument of love</b></h1></center>
@@ -63,12 +72,16 @@
     <hr>
     <main>
         <center>  <div class="button-container">
-            <button>HOME</button>
-            <button>BOOKING</button>
-            <button>LOCATIONS</button>
-            <button>CONTACT US</button>
+            <button onclick="navigateToPage()">BOOKING</button>
+            <button onclick="navigate_ToPage()">LOCATIONS</button>
+            <button onclick="toggleSection()">CONTACT US</button>
             <button onclick="toggleGallery()">GALLERY</button>
           </div></center>
+
+          <div id="hiddenSection">
+            <h2>Contact Us </h2>
+            <p>Mobile:1234567890</p>
+        </div>
           <div id="gallery">
             <img src="taj.jpg" alt="Image 1">
             <img src="taj2.jpg" alt="Image 2">
@@ -158,5 +171,29 @@ Embark on a journey to witness the epitome of love and architectural marvel – 
             gallery.style.display = (gallery.style.display === 'none' || gallery.style.display === '') ? 'block' : 'none';
         }
     }</script>
+
+<script>
+    function navigateToPage() {
+        window.location.href = 'form.html';
+    }
+</script>
+
+<script>
+    function toggleSection() {
+        var section = document.getElementById('hiddenSection');
+        if (section) {
+            section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+        }
+    }
+</script>
+
+<script>
+    function navigate_ToPage() {
+        window.location.href = 'locate.html';
+    }
+</script>
+
+
+
 </body>
 </html>
